@@ -18,12 +18,12 @@ const accordionContents = [
   {
     id: 0,
     title: "UI-UX",
-    results: ["Figma", "Framer-motion", "Styled-Components"],
+    results: ["Figma", "Framer-motion"],
   },
   {
     id: 1,
     title: "Frontend-skills",
-    results: ["HTML5", "CSS3", "Javascript"],
+    results: ["HTML5", "CSS3", "Javascript","Styled-components"],
   },
   {
     id: 2,

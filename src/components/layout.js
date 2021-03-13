@@ -16,8 +16,8 @@ import CustomCursor from "./customCursor"
 import Navigation from "./Navigation"
 import Footer from "./footer"
 import { useState } from "react"
-// Global StateContexts
-import {useGlobalStateContext} from '../context/globalContext'
+// // Global StateContexts
+import {useGlobalStateContext,useGlobalDispatch} from '../context/globalContext'
 // Global Styles
 const GlobalStyles = createGlobalStyle`
  ${normalize}
@@ -35,13 +35,37 @@ const GlobalStyles = createGlobalStyle`
      -webkit-font-smoothing:antialiased;
  }
  body{
-     background:${props => props.theme.background};
      font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
      overflow-x:hidden;
      overscroll-behavior:none;
+     background: ${props => props.theme.background};
+     
  }
 `
-const Layout = ({ children,onCursor }) => {
+export const darkTheme = {
+  background: "#000",
+  text: "#fff",
+  red: "#ea290e",
+}
+export const lightTheme = {
+  background: "#fff",
+  text: "#000",
+  red: "#ea290e",
+}
+// const globalReducer = (state, action) => {
+//   switch (action.type) {
+//     case "CURSOR_TYPE":
+//       return {
+//         ...state,
+//         cursorType: action.cursorType,
+//       }
+//     default:
+//       return {
+//         ...state,
+//       }
+//   }
+// }
+const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -51,33 +75,37 @@ const Layout = ({ children,onCursor }) => {
       }
     }
   `)
-  const {currentTheme} = useGlobalStateContext()
-  const darkTheme = {
-    background: "#000",
-    text: "#fff",
-    red: "#ea290e",
-    
+  const {cursorStyles} = useGlobalStateContext()
+  const dispatch = useGlobalDispatch()
+  const onCursor = (cursorType)=>{
+    cursorType = cursorStyles.includes(cursorType) && cursorType
+    dispatch({type:"CURSOR_TYPE",cursorType:cursorType})
   }
-  const lightTheme = {
-    background: "#fff",
-    text: "#000",
-    red: "#ea290e",
-  }
+  // const {currentTheme} = useGlobalStateContext()
+  const [theme, setTheme] = useState("light")
   const [toggleMenu, setToggleMenu] = useState(false)
   return (
-    <ThemeProvider theme={currentTheme === "dark" ? darkTheme : lightTheme}>
+    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
-      <CustomCursor toggleMenu={toggleMenu} onCursor={onCursor} />
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} toggleMenu={toggleMenu}
-        setToggleMenu={setToggleMenu}
-        onCursor={onCursor} />
-       <Navigation
+      <CustomCursor
+        toggleMenu={toggleMenu}
+        onCursor={onCursor}
+      />
+      <Header
+        siteTitle={data.site.siteMetadata?.title || `Title`}
+        theme={theme}
+        setTheme={setTheme}
         toggleMenu={toggleMenu}
         setToggleMenu={setToggleMenu}
         onCursor={onCursor}
-       />
-        <main>{children}</main>
-        <Footer onCursor={onCursor} />
+      />
+      <Navigation
+        toggleMenu={toggleMenu}
+        setToggleMenu={setToggleMenu}
+        onCursor={onCursor}
+      />
+      <main>{children}</main>
+      <Footer onCursor={onCursor} />
     </ThemeProvider>
   )
 }

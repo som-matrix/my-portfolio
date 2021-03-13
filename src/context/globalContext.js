@@ -1,4 +1,7 @@
 import React,{createContext,useContext,useReducer} from 'react'
+// import IndexPage from '../pages/index'
+// import AboutPage from '../pages/about'
+// import Layout from '../components/layout'
 // Creating Global State Context for Dark/Light Theme
 export const GlobalStateContext = createContext();
 // Creating Global State Context for Dark/Light Theme
@@ -36,7 +39,7 @@ export const GlobalProvider = ({children}) => {
     return(
         <GlobalDispatchContext.Provider value={dispatch}>
             <GlobalStateContext.Provider value={state}>
-                {children}
+                <main>{children}</main>
             </GlobalStateContext.Provider>
         </GlobalDispatchContext.Provider>
     )

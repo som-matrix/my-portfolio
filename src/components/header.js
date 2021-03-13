@@ -6,24 +6,28 @@ import { motion } from "framer-motion"
 // styled-components
 import { FlexNav, HeaderNav, Logo, Menu } from "../styles/headerStyles"
 import { Container } from "../styles/globalStyles"
-//  Global Context
-import {
-  useGlobalStateContext,
-  useGlobalDispatch,
-} from "../context/globalContext"
-const Header = ({ siteTitle, toggleMenu, setToggleMenu, onCursor }) => {
-  const dispatch = useGlobalDispatch()
-  const { currentTheme } = useGlobalStateContext()
+// //  Global Context
+// import {
+//   useGlobalStateContext,
+//   useGlobalDispatch,
+// } from "../context/globalContext"
+const Header = ({ siteTitle, toggleMenu, setToggleMenu, onCursor,theme,setTheme }) => {
+  // const dispatch = useGlobalDispatch()
+  // const { currentTheme } = useGlobalStateContext()
   const toggleThemeHandler = () => {
-    if (currentTheme === "dark") {
-      dispatch({ type: "TOGGLE_THEME", theme: "light" })
-    } else {
-      dispatch({ type: "TOGGLE_THEME", theme: "dark" })
-    }
+   if(theme === 'light'){
+     window.localStorage.setItem('theme','dark')
+     setTheme('dark')
+   } 
+   else{
+     window.localStorage.setItem('theme','light')
+     setTheme('light')
+   }
   }
   useEffect(() => {
-    window.localStorage.setItem("theme", currentTheme)
-  }, [currentTheme])
+   const localTheme =  window.localStorage.getItem('theme')
+   localTheme && setTheme(localTheme)
+  }, [theme,setTheme])
   const [textHovered, setTextHovered] = useState(false)
   return (
     <HeaderNav

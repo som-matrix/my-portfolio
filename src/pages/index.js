@@ -15,9 +15,11 @@ import HomeAbout from "../components/homePage/HomeAbout"
 const IndexPage = () => {
   const { cursorStyles } = useGlobalStateContext()
   const dispatch = useGlobalDispatch()
-  const onCursor = cursorType => {
-    cursorType = (cursorStyles.includes(cursorType) && cursorType) || false
-    dispatch({ type: "CURSOR_TYPE", cursorType: cursorType })
+  // const [cursorTypeApplied,setCursorTypeApplied] = useState(false)
+  // const cursorStyles = [ "hovered","pointer"]
+  const onCursor = (cursorType) => {
+   cursorType = cursorStyles.includes(cursorType) && cursorType
+   dispatch({type:"CURSOR_TYPE",cursorType:cursorType})
   }
   // Togling menu
   const [toggleMenu, setToggleMenu] = useState(false)
