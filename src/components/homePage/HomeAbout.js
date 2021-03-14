@@ -47,7 +47,7 @@ const HomeAbout = () => {
   const animation = useAnimation()
   const [aboutRef, inView] = useInView({
     rootMargin: "-300px",
-    triggerOnce: true,
+    triggerOnce: false,
   })
   useEffect(() => {
     if (inView) {

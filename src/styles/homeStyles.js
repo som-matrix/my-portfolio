@@ -7,7 +7,6 @@ export const Banner = styled(motion.div)`
   width: 100%;
   background: ${props => props.theme.background};
   margin-bottom: 296px;
-  position: relative;
 `
 export const Intro = styled(motion.div)`
   height: 100%;
@@ -36,13 +35,13 @@ export const Intro = styled(motion.div)`
   }
 `
 
-export const Canvas = styled.canvas`
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  display: block;
-`
+// export const Canvas = styled.canvas`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   height: 100%;
+//   display: block;
+// `
 export const BannerTitle = styled(motion.h1)`
   position: absolute;
   bottom: -117px;
@@ -81,7 +80,7 @@ export const HomeFeaturedSection = styled(motion.div)`
   a {
     margin-bottom: 200px;
     display: block;
-    position: relative;
+    /* position: relative; */
   }
 `
 
@@ -176,9 +175,6 @@ export const FeaturedProject = styled(motion.div)`
     line-height: 1;
     display: block;
     text-align: left;
-    @media (max-width:950px){
-      display:none;
-    }
     span {
       margin-right: 100px;
       display: block;
@@ -206,7 +202,7 @@ export const FeaturedProject = styled(motion.div)`
 `
 /* Thoughts-About-Javascript Section */
 export const HomeAboutSection = styled(motion.div)`
-  
+  color: ${props=>props.theme.text};
 `
 export const About = styled.div`
   width: 100%;
@@ -230,7 +226,7 @@ export const About = styled.div`
     width: 440px;
     margin-left: 124px;
     color: ${props => props.theme.text};
-    max-width: 440px;
+    /* max-width: 440px; */
     line-height: 1.6;
     margin-top: 10px;
     @media (max-width:950px){

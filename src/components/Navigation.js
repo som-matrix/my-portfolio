@@ -18,13 +18,13 @@ import {
 } from "../assets/svg/social-icons"
 import { FlexNav } from "../styles/headerStyles"
 // Images
-import Music from '../dynamic-Images/Music App.jpg'
-import Capture from '../dynamic-Images/Capture Portfolio.jpg'
-import Todo from '../dynamic-Images/Todo App.jpg'
-import Weather from '../dynamic-Images/Weather App.jpg'
-import Landing from '../dynamic-Images/Landing Page.jpg'
-import Shortener from '../dynamic-Images/URL-Shortener.jpg'
-import RockPaperScissor from '../dynamic-Images/Rock-Paper-Scissor.jpg'
+import Music from "../dynamic-Images/Music App.jpg"
+import Capture from "../dynamic-Images/Capture Portfolio.jpg"
+import Todo from "../dynamic-Images/Todo App.jpg"
+import Weather from "../dynamic-Images/Weather App.jpg"
+import Landing from "../dynamic-Images/Landing Page.jpg"
+import Shortener from "../dynamic-Images/URL-Shortener.jpg"
+import RockPaperScissor from "../dynamic-Images/Rock-Paper-Scissor.jpg"
 
 // All project routes
 const reactProjects = [
@@ -32,43 +32,43 @@ const reactProjects = [
     id: 0,
     title: "Music App",
     path: "https://wave-music-satya.netlify.app/",
-    image: Music
+    image: Music,
   },
   {
     id: 1,
     title: "Capture Portfolio",
     path: "https://capture-satya.netlify.app/",
-    image: Capture
+    image: Capture,
   },
   {
     id: 2,
     title: "Weather App",
     path: "https://my-weather-som.netlify.app/",
-    image: Weather
+    image: Weather,
   },
   {
     id: 3,
     title: "Todo App",
     path: "https://som-todo-app.netlify.app/",
-    image: Todo
+    image: Todo,
   },
   {
     id: 4,
     title: "Landing Page",
     path: "https://bookmark-landing-som.netlify.app/",
-    image: Landing
+    image: Landing,
   },
   {
     id: 5,
     title: "Url Shortener",
     path: "https://url-shortener-satya.netlify.app/",
-    image: Shortener
+    image: Shortener,
   },
   {
     id: 6,
     title: "Rock Paper Scissor",
     path: "https://rps-som.netlify.app/",
-    image: RockPaperScissor
+    image: RockPaperScissor,
   },
 ]
 
@@ -109,10 +109,14 @@ const Navigation = ({ toggleMenu, setToggleMenu, onCursor }) => {
                   {reactProjects.map(project => (
                     <li
                       key={project.id}
-                      onMouseEnter={() => onCursor("pointer")}
-                      onMouseLeave={onCursor}
+                      // onMouseEnter={() => onCursor("pointer")}
+                      // onMouseLeave={onCursor}
                     >
-                      <a href={`${project.path}`}>
+                      <a
+                        onMouseEnter={() => onCursor("pointer")}
+                        onMouseLeave={onCursor}
+                        href={`${project.path}`}
+                      >
                         <motion.div
                           initial={{ x: -108 }}
                           whileHover={{

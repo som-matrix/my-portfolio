@@ -42,7 +42,8 @@ const GlobalStyles = createGlobalStyle`
      overflow-x:hidden;
      overscroll-behavior:none;
      background: ${props => props.theme.background};
-     
+     height:100vh;
+     width:100%;
  }
 `
 export const darkTheme = {

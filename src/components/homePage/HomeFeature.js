@@ -16,7 +16,7 @@ import Satya from '../../assets/projects/satya.jpg'
 const HomeFeature = ({ onCursor }) => {
   const animation = useAnimation()
   const [featuredRef, inView] = useInView({
-    triggerOnce: true,
+    triggerOnce:false,
     rootMargin: "-350px",
   })
   useEffect(() => {
