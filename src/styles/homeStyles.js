@@ -9,16 +9,14 @@ export const Banner = styled(motion.div)`
   margin-bottom: 296px;
   position: relative;
 `
-export const Intro = styled.div`
+export const Intro = styled(motion.div)`
   height: 100%;
   width: 100%;
   padding: 0 4.5rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   .intro-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    bottom: 20px;
-    transform: translate(-50%, -50%);
     h2 {
       font-size: 6rem;
       text-align: center;
@@ -29,9 +27,10 @@ export const Intro = styled.div`
         color: ${props => props.theme.red};
       }
       @media  (max-width:950px){
-        font-size:4rem;
+        font-size:3.2rem;
         padding:0;
         margin:0;
+        text-align:center;
       }
     }
   }
@@ -57,7 +56,7 @@ export const Headline = styled(motion.span)`
   display: block;
   line-height: 0.76;
   @media (max-width:950px){
-    font-size:9rem;
+    font-size:8rem;
     
   }
 `

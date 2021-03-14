@@ -39,7 +39,7 @@ export const GlobalProvider = ({children}) => {
     return(
         <GlobalDispatchContext.Provider value={dispatch}>
             <GlobalStateContext.Provider value={state}>
-                <main>{children}</main>
+                {children}
             </GlobalStateContext.Provider>
         </GlobalDispatchContext.Provider>
     )

@@ -1,5 +1,5 @@
 import React from "react"
-// import { ThemeProvider } from "styled-components"
+import {motion}  from "framer-motion"
 import {
   Banner,
   Intro,
@@ -90,11 +90,11 @@ const HomeBanner = ({ onCursor }) => {
     // <ThemeProvider theme={theme === 'light'? lightTheme: darkTheme}>
       <Banner onMouseEnter={onCursor}>
         <Intro>
-          <div className="intro-text">
+          <motion.div className="intro-text" initial={{opacity:0,y:80}} animate={{opacity:1,y:0,transition:{duration:0.8,ease:"anticipate"}}}>
             <h2>
               I am <span>SATYA</span> learning Front End Devlopement
             </h2>
-          </div>
+          </motion.div>
         </Intro>
         {/* <Canvas
           height={size.height}
