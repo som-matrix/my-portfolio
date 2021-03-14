@@ -37,7 +37,7 @@ export const GlobalProvider = ({children}) => {
         cursorStyles: ['pointer','hovered','locked']
     })
     return(
-        <GlobalDispatchContext.Provider value={dispatch.arguments}>
+        <GlobalDispatchContext.Provider value={dispatch}>
             <GlobalStateContext.Provider value={state}>
                 <main>{children}</main>
             </GlobalStateContext.Provider>

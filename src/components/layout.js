@@ -17,7 +17,10 @@ import Navigation from "./Navigation"
 import Footer from "./footer"
 import { useState } from "react"
 // // Global StateContexts
-import {useGlobalStateContext,useGlobalDispatch} from '../context/globalContext'
+import {
+  useGlobalStateContext,
+  useGlobalDispatch,
+} from "../context/globalContext"
 // Global Styles
 const GlobalStyles = createGlobalStyle`
  ${normalize}
@@ -75,22 +78,20 @@ const Layout = ({ children }) => {
       }
     }
   `)
-  const {cursorStyles} = useGlobalStateContext()
+  const  {cursorStyles}  = useGlobalStateContext()
   const dispatch = useGlobalDispatch()
-  const onCursor = (cursorType)=>{
-    cursorType = cursorStyles.includes(cursorType) && cursorType
-    dispatch({type:"CURSOR_TYPE",cursorType:cursorType})
-  }
+  const onCursor = (cursorType) => {
+    cursorType = (cursorStyles.includes(cursorType) && cursorType)
+    dispatch({ type: "CURSOR_TYPE", cursorType: cursorType })
+
+   }
   // const {currentTheme} = useGlobalStateContext()
   const [theme, setTheme] = useState("light")
   const [toggleMenu, setToggleMenu] = useState(false)
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
-      <CustomCursor
-        toggleMenu={toggleMenu}
-        onCursor={onCursor}
-      />
+      <CustomCursor toggleMenu={toggleMenu} onCursor={onCursor} />
       <Header
         siteTitle={data.site.siteMetadata?.title || `Title`}
         theme={theme}

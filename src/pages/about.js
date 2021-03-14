@@ -10,7 +10,7 @@ const AboutPage = () => {
   const {cursorStyles} = useGlobalStateContext()
   const dispatch = useGlobalDispatch()
   const onCursor = (cursorType) => {
-    cursorType = cursorStyles.includes(cursorType) && cursorType
+    cursorType = (cursorStyles.includes(cursorType) && cursorType)
     dispatch({ type: "CURSOR_TYPE", cursorType: cursorType })
   }
   return(
