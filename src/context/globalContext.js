@@ -3,9 +3,9 @@ import React,{createContext,useContext,useReducer} from 'react'
 // import AboutPage from '../pages/about'
 // import Layout from '../components/layout'
 // Creating Global State Context for Dark/Light Theme
-export const GlobalStateContext = createContext();
+export const GlobalStateContext = createContext({});
 // Creating Global State Context for Dark/Light Theme
-export const GlobalDispatchContext = createContext()
+export const GlobalDispatchContext = createContext({})
 
 // Reducer
 const globalReducer = (state,action)=>{
