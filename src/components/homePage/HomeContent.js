@@ -6,8 +6,8 @@ import { HomeContentSection, Content } from "../../styles/homeStyles"
 const HomeContent = () => {
   const animation = useAnimation()
   const [contentRef, inView] = useInView({
-    triggerOnce:true,
-    rootMargin:'-300px'
+    threshold:0.6,
+    triggerOnce:true
   })
   useEffect(()=>{
       if(inView){
