@@ -6,14 +6,16 @@ import { HomeContentSection, Content } from "../../styles/homeStyles"
 const HomeContent = () => {
   const animation = useAnimation()
   const [contentRef, inView] = useInView({
-    triggerOnce: false,
-    rootMargin: "-350px",
+    triggerOnce:true,
+    rootMargin:'-300px'
   })
   useEffect(()=>{
       if(inView){
           animation.start("visible")
+      }else{
+        animation.start("hidden")
       }
-  })
+  },[contentRef,inView,animation])
   return (
     <HomeContentSection
       ref = {contentRef}

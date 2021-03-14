@@ -46,14 +46,17 @@ const HomeAbout = () => {
   const [expanded, setExpanded] = useState(0)
   const animation = useAnimation()
   const [aboutRef, inView] = useInView({
-    rootMargin: "-300px",
-    triggerOnce: false,
+    triggerOnce:true,
+    rootMargin:'-300px'
   })
   useEffect(() => {
     if (inView) {
       animation.start("visible")
     }
-  }, [inView, animation])
+    else{
+      animation.start("hidden")
+    }
+  }, [aboutRef,inView,animation])
   return (
     <HomeAboutSection
       ref={aboutRef}

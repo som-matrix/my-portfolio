@@ -19,14 +19,16 @@ import {
 const Footer = ({ onCursor }) => {
   const animation = useAnimation()
   const [footerRef, inView] = useInView({
-    triggerOnce: false,
-    rootMargin: "-200px",
+    threshold:0.3,
+    triggerOnce:true
   })
   useEffect(()=>{
       if(inView){
           animation.start("visible")
+      }else{
+        animation.start("hidden")
       }
-  },[animation,inView]);
+  },[footerRef,inView,animation]);
   return (
     <FooterSection
       ref={footerRef}

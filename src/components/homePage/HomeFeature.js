@@ -16,14 +16,16 @@ import Satya from '../../assets/projects/satya.jpg'
 const HomeFeature = ({ onCursor }) => {
   const animation = useAnimation()
   const [featuredRef, inView] = useInView({
-    triggerOnce:false,
-    rootMargin: "-350px",
+    triggerOnce:true,
+    rootMargin:'-350px'
   })
   useEffect(() => {
     if (inView) {
       animation.start("visible")
+    }else{
+      animation.start("hidden")
     }
-  })
+  },[featuredRef,inView,animation])
   // Hovered Animation
   const [hovered, setHovered] = useState(false)
   return (

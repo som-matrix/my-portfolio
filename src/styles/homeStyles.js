@@ -175,6 +175,9 @@ export const FeaturedProject = styled(motion.div)`
     line-height: 1;
     display: block;
     text-align: left;
+    @media (max-width:950px){
+      display:none;
+    }
     span {
       margin-right: 100px;
       display: block;
