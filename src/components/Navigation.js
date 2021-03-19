@@ -18,6 +18,7 @@ import {
 } from "../assets/svg/social-icons"
 import { FlexNav } from "../styles/headerStyles"
 // Images
+import Ignite from '../dynamic-Images/ignite-game-search.png'
 import Music from "../dynamic-Images/Music App.jpg"
 import Capture from "../dynamic-Images/Capture Portfolio.jpg"
 import Todo from "../dynamic-Images/Todo App.jpg"
@@ -29,40 +30,40 @@ import RockPaperScissor from "../dynamic-Images/Rock-Paper-Scissor.jpg"
 // All project routes
 const reactProjects = [
   {
-    id: 0,
+    id:0,
+    title:"Ignite Search",
+    path:"https://ignite-search.netlify.app/",
+    image:Ignite
+  },
+  {
+    id: 1,
     title: "Music App",
     path: "https://wave-music-satya.netlify.app/",
     image: Music,
   },
   {
-    id: 1,
+    id: 2,
     title: "Capture Portfolio",
     path: "https://capture-satya.netlify.app/",
     image: Capture,
   },
   {
-    id: 2,
+    id: 3,
     title: "Weather App",
     path: "https://my-weather-som.netlify.app/",
     image: Weather,
   },
   {
-    id: 3,
+    id: 4,
     title: "Todo App",
     path: "https://som-todo-app.netlify.app/",
     image: Todo,
   },
   {
-    id: 4,
+    id: 5,
     title: "Landing Page",
     path: "https://bookmark-landing-som.netlify.app/",
     image: Landing,
-  },
-  {
-    id: 5,
-    title: "Url Shortener",
-    path: "https://url-shortener-satya.netlify.app/",
-    image: Shortener,
   },
   {
     id: 6,
