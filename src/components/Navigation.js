@@ -33,7 +33,7 @@ const reactProjects = [
     id:0,
     title:"Ignite Search",
     path:"https://ignite-search.netlify.app/",
-    image:Ignite
+    image: Ignite
   },
   {
     id: 1,
@@ -76,7 +76,7 @@ const reactProjects = [
 const Navigation = ({ toggleMenu, setToggleMenu, onCursor }) => {
   const [revealImage, setRevealImage] = useState({
     show: false,
-    image: Music,
+    image: Ignite ,
     key: "0",
   })
   return (
