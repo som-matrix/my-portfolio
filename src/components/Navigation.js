@@ -18,22 +18,20 @@ import {
 } from "../assets/svg/social-icons"
 import { FlexNav } from "../styles/headerStyles"
 // Images
-import Ignite from '../dynamic-Images/ignite-game-search.png'
+import Ignite from "../dynamic-Images/ignite-game-search.png"
 import Music from "../dynamic-Images/Music App.jpg"
+import Movie from "../dynamic-Images/Homepage.png"
 import Capture from "../dynamic-Images/Capture Portfolio.jpg"
 import Todo from "../dynamic-Images/Todo App.jpg"
-import Weather from "../dynamic-Images/Weather App.jpg"
 import Landing from "../dynamic-Images/Landing Page.jpg"
-import Shortener from "../dynamic-Images/URL-Shortener.jpg"
-import RockPaperScissor from "../dynamic-Images/Rock-Paper-Scissor.jpg"
 
 // All project routes
 const reactProjects = [
   {
-    id:0,
-    title:"Ignite Search",
-    path:"https://ignite-search.netlify.app/",
-    image: Ignite
+    id: 0,
+    title: "Ignite Search",
+    path: "https://ignite-search.netlify.app/",
+    image: Ignite,
   },
   {
     id: 1,
@@ -47,36 +45,30 @@ const reactProjects = [
     path: "https://capture-satya.netlify.app/",
     image: Capture,
   },
-  // {
-  //   id: 3,
-  //   title: "Weather App",
-  //   path: "https://my-weather-som.netlify.app/",
-  //   image: Weather,
-  // },
   {
     id: 3,
+    title: "Movieflicks",
+    path: "https://movieflicks-search-anything.netlify.app/",
+    image: Movie,
+  },
+  {
+    id: 4,
     title: "Todo App",
     path: "https://som-todo-app.netlify.app/",
     image: Todo,
   },
   {
-    id: 4,
+    id: 5,
     title: "Landing Page",
     path: "https://bookmark-landing-som.netlify.app/",
     image: Landing,
-  },
-  {
-    id: 5,
-    title: "Rock Paper Scissor",
-    path: "https://rps-som.netlify.app/",
-    image: RockPaperScissor,
   },
 ]
 
 const Navigation = ({ toggleMenu, setToggleMenu, onCursor }) => {
   const [revealImage, setRevealImage] = useState({
     show: false,
-    image: Ignite ,
+    image: Ignite,
     key: "0",
   })
   return (
