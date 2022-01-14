@@ -1,14 +1,15 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby-plugin-react-i18next";
 // import {StaticImage} from 'gatsby-plugin-image'
-import { AnimatePresence } from "framer-motion"
-import { Container, Flex } from "../../styles/globalStyles"
+import { AnimatePresence } from "framer-motion";
+import { Container, Flex } from "../../styles/globalStyles";
 import {
   AboutComponent,
   AboutText,
   AboutImage,
-} from "../../styles/aboutMeStyles"
-import Satya from '../../assets/projects/satya.jpg'
+} from "../../styles/aboutMeStyles";
+import Satya from "../../assets/projects/satya.jpg";
+
 const parent = {
   hidden: {
     opacity: 0,
@@ -22,7 +23,7 @@ const parent = {
       staggerChildren: 0.5,
     },
   },
-}
+};
 const child = {
   hidden: {
     y: 72,
@@ -34,7 +35,7 @@ const child = {
       ease: [0.6, 0.5, -0.01, 0.9],
     },
   },
-}
+};
 const AboutMe = () => {
   return (
     <AnimatePresence exitBeforeEnter>
@@ -42,8 +43,7 @@ const AboutMe = () => {
         variants={parent}
         initial="hidden"
         exit="exit"
-        animate="visible"
-      >
+        animate="visible">
         <Container>
           <Flex spaceBetween>
             <AboutText variants={child}>
@@ -64,9 +64,8 @@ const AboutMe = () => {
                 opacity: 1,
                 scale: 1,
                 transition: { duration: 1.3, ease: "backOut" },
-              }}
-            >
-              <img src={Satya} alt="my-profile"/>
+              }}>
+              <img src={Satya} alt="my-profile" />
               {/* <StaticImage
                 src="../../assets/projects/satya.jpg"
                 quality={95}
@@ -81,7 +80,7 @@ const AboutMe = () => {
         </Container>
       </AboutComponent>
     </AnimatePresence>
-  )
-}
+  );
+};
 
-export default AboutMe
+export default AboutMe;

@@ -1,34 +1,34 @@
-import React,{useEffect} from "react"
-import { useAnimation } from "framer-motion"
-import { useInView } from "react-intersection-observer"
+import React, { useEffect } from "react";
+import { useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 // Global Styles
-import { Container, Flex } from "../styles/globalStyles"
+import { Container, Flex } from "../styles/globalStyles";
 // Footer Styles
 import {
   FooterSection,
   FooterContent,
   FooterSocial,
-} from "../styles/footerStyles"
+} from "../styles/footerStyles";
 // Social Icons
 import {
   Instagram,
   LinkedIn,
   Github,
   Dribble,
-} from "../assets/svg/social-icons"
+} from "../assets/svg/social-icons";
 const Footer = ({ onCursor }) => {
-  const animation = useAnimation()
+  const animation = useAnimation();
   const [footerRef, inView] = useInView({
-    threshold:0.3,
-    triggerOnce:true
-  })
-  useEffect(()=>{
-      if(inView){
-          animation.start("visible")
-      }else{
-        animation.start("hidden")
-      }
-  },[footerRef,inView,animation]);
+    threshold: 0.3,
+    triggerOnce: true,
+  });
+  useEffect(() => {
+    if (inView) {
+      animation.start("visible");
+    } else {
+      animation.start("hidden");
+    }
+  }, [footerRef, inView, animation]);
   return (
     <FooterSection
       ref={footerRef}
@@ -44,8 +44,7 @@ const Footer = ({ onCursor }) => {
           },
         },
         hidden: { y: 70, opacity: 0 },
-      }}
-    >
+      }}>
       <Container>
         <Flex spaceBetween>
           <FooterContent>
@@ -58,8 +57,7 @@ const Footer = ({ onCursor }) => {
           </FooterContent>
           <FooterSocial
             onMouseEnter={() => onCursor("hovered")}
-            onMouseLeave={onCursor}
-          >
+            onMouseLeave={onCursor}>
             <a href="https://www.instagram.com/satya9931/">
               <Instagram />
             </a>
@@ -76,7 +74,7 @@ const Footer = ({ onCursor }) => {
         </Flex>
       </Container>
     </FooterSection>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
