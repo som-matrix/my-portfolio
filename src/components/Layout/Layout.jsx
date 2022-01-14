@@ -9,7 +9,7 @@ import SEO from "../Seo";
 import Header from "../Header/Header";
 import CustomCursor from "../CustomCursor";
 import Navigation from "../Navigation";
-import Footer from "../../Footer/Footer";
+import Footer from "../Footer/Footer";
 
 // // Global StateContexts
 import {
