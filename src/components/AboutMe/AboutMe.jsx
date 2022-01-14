@@ -8,7 +8,7 @@ import {
   AboutText,
   AboutImage,
 } from "../../styles/aboutMeStyles";
-import Satya from "../../assets/projects/satya.jpg";
+import profileImage from "../../assets/satya.jpg";
 
 const parent = {
   hidden: {
@@ -65,16 +65,7 @@ const AboutMe = () => {
                 scale: 1,
                 transition: { duration: 1.3, ease: "backOut" },
               }}>
-              <img src={Satya} alt="my-profile" />
-              {/* <StaticImage
-                src="../../assets/projects/satya.jpg"
-                quality={95}
-                formats={["AUTO", "WEBP", "AVIF"]}
-                alt="my-profile"
-                style={{height:'100%',
-                  width:'100%',
-                  maxWidth:'100%'}}
-              /> */}
+              <img src={profileImage} alt="my-profile" />
             </AboutImage>
           </Flex>
         </Container>

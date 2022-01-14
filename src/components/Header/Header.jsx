@@ -4,8 +4,8 @@ import { Link } from "gatsby-plugin-react-i18next";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 // styled-components
-import { FlexNav, HeaderNav, Logo, Menu } from "../styles/headerStyles";
-import { Container } from "../styles/globalStyles";
+import { FlexNav, HeaderNav, Logo, Menu } from "../../styles/headerStyles";
+import { Container } from "../../styles/globalStyles";
 // //  Global Context
 // import {
 //   useGlobalStateContext,

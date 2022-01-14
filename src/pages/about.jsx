@@ -1,12 +1,12 @@
 import * as React from "react";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Layout from "../components/Layout/Layout";
 // About Page Component
-import AboutMe from "../components/aboutPage/aboutMe";
+import AboutMe from "../components/AboutMe/AboutMe";
 import {
   useGlobalDispatch,
   useGlobalStateContext,
 } from "../context/globalContext";
+
 const AboutPage = () => {
   const { cursorStyles } = useGlobalStateContext();
   const dispatch = useGlobalDispatch();
@@ -15,8 +15,7 @@ const AboutPage = () => {
     dispatch({ type: "CURSOR_TYPE", cursorType: cursorType });
   };
   return (
-    <Layout onCursor={onCursor}>
-      <SEO title="About" />
+    <Layout onCursor={onCursor} seoTitle="About">
       <AboutMe />
     </Layout>
   );

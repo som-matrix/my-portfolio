@@ -18,12 +18,12 @@ import {
 } from "../assets/svg/social-icons";
 import { FlexNav } from "../styles/headerStyles";
 // Images
-import Ignite from "../dynamic-Images/ignite-game-search.png";
-import Music from "../dynamic-Images/Music App.jpg";
-import Movie from "../dynamic-Images/Homepage.png";
-import Capture from "../dynamic-Images/Capture Portfolio.jpg";
-import Todo from "../dynamic-Images/Todo App.jpg";
-import Landing from "../dynamic-Images/Landing Page.jpg";
+import Ignite from "../assets/ignite-game-search.png";
+import Music from "../assets/Music App.jpg";
+import Movie from "../assets/Homepage.png";
+import Capture from "../assets/Capture Portfolio.jpg";
+import Todo from "../assets/Todo App.jpg";
+import Landing from "../assets/Landing Page.jpg";
 
 // All project routes
 const reactProjects = [

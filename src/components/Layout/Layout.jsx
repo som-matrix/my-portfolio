@@ -1,26 +1,21 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
-import * as React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
+
 // Components
-import Header from "./header";
-import CustomCursor from "./customCursor";
-import Navigation from "./Navigation";
-import Footer from "./footer";
-import { useState } from "react";
+import SEO from "../Seo";
+import Header from "../Header/Header";
+import CustomCursor from "../CustomCursor";
+import Navigation from "../Navigation";
+import Footer from "../../Footer/Footer";
+
 // // Global StateContexts
 import {
   useGlobalStateContext,
   useGlobalDispatch,
-} from "../context/globalContext";
+} from "../../context/globalContext";
 // Global Styles
 const GlobalStyles = createGlobalStyle`
  ${normalize}
@@ -56,20 +51,8 @@ export const lightTheme = {
   text: "#000",
   red: "#ea290e",
 };
-// const globalReducer = (state, action) => {
-//   switch (action.type) {
-//     case "CURSOR_TYPE":
-//       return {
-//         ...state,
-//         cursorType: action.cursorType,
-//       }
-//     default:
-//       return {
-//         ...state,
-//       }
-//   }
-// }
-const Layout = ({ children }) => {
+
+const Layout = ({ children, seoTitle }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -90,6 +73,7 @@ const Layout = ({ children }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+      <SEO title={seoTitle} />
       <GlobalStyles />
       <CustomCursor toggleMenu={toggleMenu} onCursor={onCursor} />
       <Header
@@ -105,7 +89,7 @@ const Layout = ({ children }) => {
         setToggleMenu={setToggleMenu}
         onCursor={onCursor}
       />
-      <main>{children}</main>
+      {children}
       <Footer onCursor={onCursor} />
     </ThemeProvider>
   );
