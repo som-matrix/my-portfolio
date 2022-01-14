@@ -2,20 +2,20 @@ import React, { useEffect } from "react";
 import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 // Global Styles
-import { Container, Flex } from "../styles/globalStyles";
+import { Container, Flex } from "../../styles/globalStyles";
 // Footer Styles
 import {
   FooterSection,
   FooterContent,
   FooterSocial,
-} from "../styles/footerStyles";
+} from "../../styles/footerStyles";
 // Social Icons
 import {
   Instagram,
   LinkedIn,
   Github,
   Dribble,
-} from "../assets/svg/social-icons";
+} from "../../assets/svg/social-icons";
 const Footer = ({ onCursor }) => {
   const animation = useAnimation();
   const [footerRef, inView] = useInView({
