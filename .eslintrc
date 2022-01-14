@@ -1,0 +1,22 @@
+{
+    "extends": "react-app",
+    "plugins": ["prettier"],
+    "rules": {
+      "prettier/prettier": "error",
+      "no-restricted-imports": [
+        "warn",
+        {
+          "paths": [
+            {
+              "name": "gatsby",
+              "importNames": ["Link"],
+              "message": "Please use Link from gatsby-plugin-react-i18next instead."
+            }
+          ]
+        }
+      ]
+    },
+    "globals": {
+      "_paq": true
+    }
+  }

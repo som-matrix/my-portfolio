@@ -1,29 +1,28 @@
-
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 
 export default function useElementPosition(el) {
   function getElement(x, y) {
     return {
       x: x,
       y: y,
-    }
+    };
   }
-  const [elementPosition, setElementPosition] = useState(getElement)
+  const [elementPosition, setElementPosition] = useState(getElement);
 
   useEffect(() => {
     function handalePosition() {
-      let element = el.current
+      let element = el.current;
       let x =
         element.getBoundingClientRect().left +
         document.documentElement.scrollLeft +
-        element.offsetWidth / 2
+        element.offsetWidth / 2;
       let y =
         element.getBoundingClientRect().top +
         document.documentElement.scrollTop +
-        element.offsetHeight / 2
-        setElementPosition(getElement(x,y))
+        element.offsetHeight / 2;
+      setElementPosition(getElement(x, y));
     }
-    handalePosition()
-  },[el])
-  return elementPosition
+    handalePosition();
+  }, [el]);
+  return elementPosition;
 }

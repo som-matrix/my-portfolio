@@ -1,12 +1,12 @@
-import React from "react"
-import {motion}  from "framer-motion"
+import React from "react";
+import { motion } from "framer-motion";
 import {
   Banner,
   Intro,
   // Canvas,
   BannerTitle,
   Headline,
-} from "../../styles/homeStyles"
+} from "../../styles/homeStyles";
 // import { darkTheme, lightTheme } from "../layout"
 // Custom hook
 // import useWindowSize from "../../hooks/useWindowSize"
@@ -25,7 +25,7 @@ const HomeBanner = ({ onCursor }) => {
         staggerChildren: 0.2,
       },
     },
-  }
+  };
   const child = {
     hidden: {
       opacity: 0,
@@ -39,7 +39,7 @@ const HomeBanner = ({ onCursor }) => {
         ease: [0.6, 0.05, -0.01, 0.9],
       },
     },
-  }
+  };
   // Canvas Part
   // const canvas = useRef(null)
   // const size = useWindowSize()
@@ -88,15 +88,22 @@ const HomeBanner = ({ onCursor }) => {
   // }, [theme, size.height, size.width,setTheme])
   return (
     // <ThemeProvider theme={theme === 'light'? lightTheme: darkTheme}>
-      <Banner onMouseEnter={onCursor}>
-        <Intro>
-          <motion.div className="intro-text" initial={{opacity:0,y:80}} animate={{opacity:1,y:0,transition:{duration:0.8,ease:"anticipate"}}}>
-            <h2>
-              I am <span>SATYA</span> learning Front End Devlopement
-            </h2>
-          </motion.div>
-        </Intro>
-        {/* <Canvas
+    <Banner onMouseEnter={onCursor}>
+      <Intro>
+        <motion.div
+          className="intro-text"
+          initial={{ opacity: 0, y: 80 }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.8, ease: "anticipate" },
+          }}>
+          <h2>
+            I am <span>SATYA</span> learning Front End Devlopement
+          </h2>
+        </motion.div>
+      </Intro>
+      {/* <Canvas
           height={size.height}
           width={size.width}
           key={theme}
@@ -104,13 +111,13 @@ const HomeBanner = ({ onCursor }) => {
           onMouseEnter={() => onCursor("hovered")}
           onMouseLeave={onCursor}
         /> */}
-        <BannerTitle variants={parent} initial="hidden" animate="show">
-          <Headline variants={child}>THINK</Headline>
-          <Headline variants={child}>BIG</Headline>
-        </BannerTitle>
-      </Banner>
+      <BannerTitle variants={parent} initial="hidden" animate="show">
+        <Headline variants={child}>THINK</Headline>
+        <Headline variants={child}>BIG</Headline>
+      </BannerTitle>
+    </Banner>
     //  </ThemeProvider>
-  )
-}
+  );
+};
 
-export default HomeBanner
+export default HomeBanner;

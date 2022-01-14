@@ -1,6 +1,6 @@
-import React, { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Container, Flex } from "../styles/globalStyles"
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Container, Flex } from "../styles/globalStyles";
 import {
   Nav,
   NavHeader,
@@ -8,22 +8,22 @@ import {
   NavList,
   NavProjects,
   NavFooter,
-} from "../styles/navigationStyles"
-import { FooterContent, FooterSocial } from "../styles/footerStyles"
+} from "../styles/navigationStyles";
+import { FooterContent, FooterSocial } from "../styles/footerStyles";
 import {
   Instagram,
   LinkedIn,
   Github,
   Dribble,
-} from "../assets/svg/social-icons"
-import { FlexNav } from "../styles/headerStyles"
+} from "../assets/svg/social-icons";
+import { FlexNav } from "../styles/headerStyles";
 // Images
-import Ignite from "../dynamic-Images/ignite-game-search.png"
-import Music from "../dynamic-Images/Music App.jpg"
-import Movie from "../dynamic-Images/Homepage.png"
-import Capture from "../dynamic-Images/Capture Portfolio.jpg"
-import Todo from "../dynamic-Images/Todo App.jpg"
-import Landing from "../dynamic-Images/Landing Page.jpg"
+import Ignite from "../dynamic-Images/ignite-game-search.png";
+import Music from "../dynamic-Images/Music App.jpg";
+import Movie from "../dynamic-Images/Homepage.png";
+import Capture from "../dynamic-Images/Capture Portfolio.jpg";
+import Todo from "../dynamic-Images/Todo App.jpg";
+import Landing from "../dynamic-Images/Landing Page.jpg";
 
 // All project routes
 const reactProjects = [
@@ -63,14 +63,14 @@ const reactProjects = [
     path: "https://bookmark-landing-som.netlify.app/",
     image: Landing,
   },
-]
+];
 
 const Navigation = ({ toggleMenu, setToggleMenu, onCursor }) => {
   const [revealImage, setRevealImage] = useState({
     show: false,
     image: Ignite,
     key: "0",
-  })
+  });
   return (
     <>
       <AnimatePresence exitBeforeEnter>
@@ -79,8 +79,7 @@ const Navigation = ({ toggleMenu, setToggleMenu, onCursor }) => {
             initial={{ x: "-100%" }}
             exit={{ x: "-100%", transition: { duration: 0.8 } }}
             animate={{ x: toggleMenu ? "0%" : "-100%" }}
-            transition={{ duration: 0.5, ease: [0.6, 0.05, -0.01, 0.9] }}
-          >
+            transition={{ duration: 0.5, ease: [0.6, 0.05, -0.01, 0.9] }}>
             <Container>
               <NavHeader>
                 <FlexNav spaceBetween noHeight>
@@ -89,8 +88,7 @@ const Navigation = ({ toggleMenu, setToggleMenu, onCursor }) => {
                     <button
                       onClick={() => setToggleMenu(!toggleMenu)}
                       onMouseEnter={() => onCursor("pointer")}
-                      onMouseLeave={onCursor}
-                    >
+                      onMouseLeave={onCursor}>
                       <span className="line1"></span>
                       <span className="line2"></span>
                     </button>
@@ -99,7 +97,7 @@ const Navigation = ({ toggleMenu, setToggleMenu, onCursor }) => {
               </NavHeader>
               <NavList>
                 <ul>
-                  {reactProjects.map(project => (
+                  {reactProjects.map((project) => (
                     <li
                       key={project.id}
                       // onMouseEnter={() => onCursor("pointer")}
@@ -108,8 +106,7 @@ const Navigation = ({ toggleMenu, setToggleMenu, onCursor }) => {
                       <a
                         onMouseEnter={() => onCursor("pointer")}
                         onMouseLeave={onCursor}
-                        href={`${project.path}`}
-                      >
+                        href={`${project.path}`}>
                         <motion.div
                           initial={{ x: -108 }}
                           whileHover={{
@@ -133,18 +130,15 @@ const Navigation = ({ toggleMenu, setToggleMenu, onCursor }) => {
                               key: project.id,
                             })
                           }
-                          className="link"
-                        >
+                          className="link">
                           <span className="arrow">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 101 57"
-                            >
+                              viewBox="0 0 101 57">
                               <path
                                 d="M33 34H0V24h81.429L66 7.884 73.548 0l19.877 20.763.027-.029L101 28.618 73.829 57l-7.548-7.884L80.753 34H33z"
                                 fill="#FFF"
-                                fillRule="evenodd"
-                              ></path>
+                                fillRule="evenodd"></path>
                             </svg>
                             {project.title}
                           </span>
@@ -157,8 +151,7 @@ const Navigation = ({ toggleMenu, setToggleMenu, onCursor }) => {
               <NavProjects>
                 <motion.div
                   animate={{ width: revealImage.show ? "0%" : "100%" }}
-                  className="reveal"
-                ></motion.div>
+                  className="reveal"></motion.div>
                 <div className="image">
                   <AnimatePresence initial={false} exitBeforeEnter>
                     <motion.img
@@ -185,8 +178,7 @@ const Navigation = ({ toggleMenu, setToggleMenu, onCursor }) => {
                   </FooterContent>
                   <FooterSocial
                     onMouseEnter={() => onCursor("pointer")}
-                    onMouseLeave={onCursor}
-                  >
+                    onMouseLeave={onCursor}>
                     <a href="https://www.instagram.com/satya9931/">
                       <Instagram />
                     </a>
@@ -207,7 +199,7 @@ const Navigation = ({ toggleMenu, setToggleMenu, onCursor }) => {
         )}
       </AnimatePresence>
     </>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;

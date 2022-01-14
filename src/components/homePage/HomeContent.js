@@ -1,24 +1,24 @@
-import React, { useEffect } from "react"
-import { useInView } from "react-intersection-observer"
-import { useAnimation } from "framer-motion"
-import { Container } from "../../styles/globalStyles"
-import { HomeContentSection, Content } from "../../styles/homeStyles"
+import React, { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import { useAnimation } from "framer-motion";
+import { Container } from "../../styles/globalStyles";
+import { HomeContentSection, Content } from "../../styles/homeStyles";
 const HomeContent = () => {
-  const animation = useAnimation()
+  const animation = useAnimation();
   const [contentRef, inView] = useInView({
-    threshold:0.6,
-    triggerOnce:true
-  })
-  useEffect(()=>{
-      if(inView){
-          animation.start("visible")
-      }else{
-        animation.start("hidden")
-      }
-  },[contentRef,inView,animation])
+    threshold: 0.6,
+    triggerOnce: true,
+  });
+  useEffect(() => {
+    if (inView) {
+      animation.start("visible");
+    } else {
+      animation.start("hidden");
+    }
+  }, [contentRef, inView, animation]);
   return (
     <HomeContentSection
-      ref = {contentRef}
+      ref={contentRef}
       initial="hidden"
       animate={animation}
       variants={{
@@ -31,8 +31,7 @@ const HomeContent = () => {
           },
         },
         hidden: { y: 70, opacity: 0 },
-      }}
-    >
+      }}>
       <Container>
         <Content>
           The dream behind the Web is of a common information space in which we
@@ -42,7 +41,7 @@ const HomeContent = () => {
         </Content>
       </Container>
     </HomeContentSection>
-  )
-}
+  );
+};
 
-export default HomeContent
+export default HomeContent;
