@@ -12,8 +12,9 @@ import {
   FeaturedProject,
 } from "../../styles/homeStyles";
 // Image
-import Satya from "../../assets/projects/satya.jpg";
-const HomeFeature = ({ onCursor }) => {
+import profileImage from "../../assets/satya.jpg";
+
+const FeatureSection = ({ onCursor }) => {
   const animation = useAnimation();
   const [featuredRef, inView] = useInView({
     threshold: 0.6,
@@ -87,14 +88,7 @@ const HomeFeature = ({ onCursor }) => {
             </div>
           </FeaturedContent>
           <FeaturedPhoto>
-            <img src={Satya} alt="my=profile" />
-            {/* <StaticImage
-              src="../../assets/projects/satya.jpg"
-              quality={95}
-              formats={["AUTO", "WEBP", "AVIF"]}
-              alt="my-profile"
-              style={{height:'1200px',maxWidth:'100%',objectFit:'cover',}}
-            /> */}
+            <img src={profileImage} alt="my=profile" />
           </FeaturedPhoto>
         </Link>
       </Container>
@@ -113,4 +107,4 @@ const HomeFeature = ({ onCursor }) => {
   );
 };
 
-export default HomeFeature;
+export default FeatureSection;

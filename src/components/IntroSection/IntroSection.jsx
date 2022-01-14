@@ -3,7 +3,8 @@ import { useInView } from "react-intersection-observer";
 import { useAnimation } from "framer-motion";
 import { Container } from "../../styles/globalStyles";
 import { HomeContentSection, Content } from "../../styles/homeStyles";
-const HomeContent = () => {
+
+const IntroSection = () => {
   const animation = useAnimation();
   const [contentRef, inView] = useInView({
     threshold: 0.6,
@@ -44,4 +45,4 @@ const HomeContent = () => {
   );
 };
 
-export default HomeContent;
+export default IntroSection;

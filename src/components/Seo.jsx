@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, title, favicon }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -35,6 +35,18 @@ function SEO({ description, lang, meta, title }) {
       }}
       title={title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      link={[
+        {
+          rel: "icon",
+          type: "image/png",
+          href: favicon,
+        },
+        {
+          rel: "apple-touch-icon",
+          type: "image/png",
+          href: favicon,
+        },
+      ]}
       meta={[
         {
           name: `description`,
