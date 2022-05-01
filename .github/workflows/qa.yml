@@ -15,5 +15,4 @@ jobs:
       - name: Poke build server to run build script
         uses: appleboy/ssh-action@v0.1.3
         with:
-          key: ${{ secrets.my_ssh }}
-          script: "yeet"
+          key: ${{ secrets.MASTER_QA_SSH_KEY }}
