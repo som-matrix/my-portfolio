@@ -1,0 +1,18 @@
+name: Deploy master on master-QA.
+
+on:
+  push:
+    branches:
+      - master-QA
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Manually initiated by: ${{github.event.inputs.client_id}}"
+        if: ${{ github.event.inputs.client_id != null }}
+      - name: Poke build server to run build script
+        uses: appleboy/ssh-action@v0.1.3
+        with:
+          script: "yeet"
